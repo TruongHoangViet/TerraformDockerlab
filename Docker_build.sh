@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# create a repository to store the docker image in docker hub
-
-# launch an ec2 instance. open port 80 and port 22
+# launch an ec2 instance. open port 80 and port 22(just a reference, i use Azure for this)
 
 # install and configure docker on the ec2 instance
 sudo apt update -y
@@ -10,9 +8,9 @@ sudo amazon-linux-extras install docker -y
 sudo service docker start
 sudo systemctl enable docker
 
-# login to your docker hub account, my password is hidden in my local computer
-cat ~/my_password.txt | sudo docker login --vietth2001 --Qaqaqaqa123
 
+# login to your docker hub account, my password is hidden in my local computer
+cat ~/my_password.txt | sudo docker login --vietth2001 --password-stdin
 
 # start the container and run the nginx image 
 
