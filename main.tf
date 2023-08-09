@@ -40,8 +40,8 @@ resource "azurerm_subnet" "silverlord_sn" {
 }
 
 resource "azurerm_network_security_group" "silverlord_sg" {
-  name                = "silverord_security_group"
-  location            = azurerm_resource_group.silverlord_rg.location
+  name                 = "silverord_security_group"
+  location             = azurerm_resource_group.silverlord_rg.location
   resource_group_name = azurerm_resource_group.silverlord_rg.name
 
   tags = {
@@ -89,11 +89,11 @@ resource "azurerm_network_interface" "silverlord_ni1" {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.silverlord_sn.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.silverlord_ip1.id
+    public_ip_address_id = azurerm_public_ip.silverlord_ip1.id
   }
   tags = {
-    environment = "lab"
-  }
+      environment = "lab"
+    }
 }
 
 resource "azurerm_linux_virtual_machine" "silverlord_linux" {
